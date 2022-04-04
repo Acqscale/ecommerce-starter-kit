@@ -4,7 +4,6 @@ import classNames from '@/utils/classnames';
 
 type TextareaProps = {
   value: string;
-  defaultValue?: string;
   onChange: (val: ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder?: string;
   label: string;
@@ -23,7 +22,6 @@ const Textarea: FunctionComponent<TextareaProps> = ({
   name,
   rows = 4,
   cols = 20,
-  defaultValue = '',
 }) => {
   return (
     <>
@@ -43,7 +41,6 @@ const Textarea: FunctionComponent<TextareaProps> = ({
         rows={rows}
         cols={cols}
         placeholder={placeholder}
-        defaultValue={defaultValue}
         value={value}
         onChange={onChange}
       />

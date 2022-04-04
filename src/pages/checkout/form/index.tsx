@@ -5,6 +5,7 @@ import {
   SetStateAction,
 } from 'react';
 
+import Button from '@/components/ui/button';
 import Checkbox from '@/components/ui/checkbox';
 import Input from '@/components/ui/input';
 import Textarea from '@/components/ui/textarea';
@@ -146,9 +147,7 @@ const CheckoutForm: FunctionComponent<CheckoutFormProps> = ({
             />
           </div>
           <div className="mt-4">
-            <button className="py-2 px-6 w-full rounded-sm hover:opacity-80 text-on-secondary bg-secondary">
-              Process
-            </button>
+            <Button onClick={() => {}}>Process</Button>
           </div>
         </div>
       </form>

@@ -1,14 +1,24 @@
-import { Fragment, useState } from 'react';
+import { Fragment, FunctionComponent, useState } from 'react';
 
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, SearchIcon, ShoppingBagIcon } from '@heroicons/react/solid';
+import Link from 'next/link';
 
 import { navigation } from '@/mock-data/navidagion';
 import classNames from '@/utils/classnames';
 
+import ThemeSwitcher from '../ui/theme-switcher';
 import MobileMenu from './mobile-menu';
 
-const Header = () => {
+type HeaderProps = {
+  setSelectedTheme: (val: string) => void;
+  theme: string;
+};
+
+const Header: FunctionComponent<HeaderProps> = ({
+  theme,
+  setSelectedTheme,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   return (
     <>
@@ -31,14 +41,16 @@ const Header = () => {
 
               {/* Logo */}
               <div className="flex ml-4 lg:ml-0">
-                <a href="#">
-                  <span className="sr-only">Workflow</span>
-                  <img
-                    className="w-auto h-8"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
-                    alt=""
-                  />
-                </a>
+                <Link href="/">
+                  <a>
+                    <span className="sr-only">Workflow</span>
+                    <img
+                      className="w-auto h-8"
+                      src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                      alt=""
+                    />
+                  </a>
+                </Link>
               </div>
 
               {/* Flyout menus */}
@@ -183,18 +195,10 @@ const Header = () => {
                 </div>
 
                 <div className="hidden lg:flex lg:ml-8">
-                  <a
-                    href="#"
-                    className="flex items-center text-on-background hover:text-opacity-80800"
-                  >
-                    <img
-                      src="https://tailwindui.com/img/flags/flag-canada.svg"
-                      alt=""
-                      className="block shrink-0 w-5 h-auto"
-                    />
-                    <span className="block ml-3 text-sm font-medium">CAD</span>
-                    <span className="sr-only">, change currency</span>
-                  </a>
+                  <ThemeSwitcher
+                    isDark={theme === 'dark'}
+                    switchTheme={setSelectedTheme}
+                  />
                 </div>
 
                 {/* Search */}

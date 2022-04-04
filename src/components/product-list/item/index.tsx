@@ -1,5 +1,7 @@
 import { FunctionComponent, useMemo } from 'react';
 
+import Link from 'next/link';
+
 export enum ViewType {
   listView = 'LIST_VIEW',
   gridView = 'GRID_VIEW',
@@ -54,10 +56,12 @@ const ListItem: FunctionComponent<ProductProps> = ({ product, viewType }) => {
       <div className={productDescriptionClassNames}>
         <div>
           <h3 className="text-sm text-on-background">
-            <a href={`/product/${product.id}`}>
-              <span aria-hidden="true" className="absolute inset-0" />
-              {product.name}
-            </a>
+            <Link href={`/product/${product.id}`}>
+              <a>
+                <span aria-hidden="true" className="absolute inset-0" />
+                {product.name}
+              </a>
+            </Link>
           </h3>
           <p className="mt-1 text-sm text-on-background">{product.color}</p>
         </div>
