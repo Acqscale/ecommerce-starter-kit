@@ -1,0 +1,19 @@
+.product {
+  @apply max-w-sm bg-background rounded-lg shadow-lg border border-secondary border-opacity-10;
+}
+
+.productContent {
+  @apply p-6;
+}
+
+.productName {
+  @apply text-base font-normal leading-6 text-secondary mb-1;
+}
+
+.productPrice {
+  @apply text-sm font-bold mb-8;
+}
+
+.buttonWrapper {
+  @apply w-fit;
+}

@@ -1,15 +1,22 @@
 import { FunctionComponent, ReactChild } from 'react';
 
+import styles from './styles.module.css';
+
 type ButtonProps = {
   onClick: () => void;
+  variant?: string;
   children: ReactChild;
 };
 
-const Button: FunctionComponent<ButtonProps> = ({ onClick, children }) => {
+const Button: FunctionComponent<ButtonProps> = ({
+  onClick,
+  variant = 'default',
+  children,
+}) => {
   return (
     <button
       type="button"
-      className="py-2 px-6 w-full font-medium rounded-md hover:opacity-80 text-on-secondary bg-secondary"
+      className={`${styles.button} ${styles[variant]}`}
       onClick={onClick}
     >
       {children}

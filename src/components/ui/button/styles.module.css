@@ -1,0 +1,23 @@
+.button {
+  @apply py-4 px-6 w-full font-medium rounded-lg;
+}
+
+.default {
+  @apply text-on-primary bg-primary;
+}
+
+.transparent {
+  @apply px-4 py-3 bg-transparent text-secondary;
+}
+
+.selected {
+  @apply px-4 py-3 bg-secondary bg-opacity-10;
+}
+
+.outline {
+  @apply bg-transparent border border-[#004633] py-2 px-3 text-[#004633] text-sm font-medium;
+}
+
+.outline-white {
+  @apply bg-transparent border border-white py-2 px-3 text-white text-sm font-medium;
+}

@@ -1,0 +1,45 @@
+.wrapper {
+  @apply bg-background px-4 py-10 lg:max-w-7xl lg:mx-auto lg:py-16;
+}
+
+.head {
+  @apply sm:flex sm:justify-between sm:items-baseline;
+}
+
+.title {
+  @apply text-3xl font-normal mb-4 text-secondary text-center;
+}
+
+.browse {
+  @apply hidden text-base font-medium text-primary md:flex;
+}
+
+.arrow {
+  @apply h-6 w-6 stroke-2;
+}
+
+.collections {
+  @apply grid grid-cols-1 gap-y-6 lg:gap-8 md:grid-cols-2 md:gap-8 lg:grid-rows-[310px];
+}
+
+.collection {
+  @apply overflow-hidden rounded-lg aspect-w-2 aspect-h-1 h-[17.5rem] md:first:col-span-2 md:h-[400px] md:first:h-[652px] lg:row-span-1 lg:first:row-span-2 lg:first:col-span-1 lg:h-[unset] lg:aspect-h-[unset];
+}
+
+.image {
+  @apply object-cover object-center;
+
+  /* object-cover object-center sm:absolute sm:inset-0 sm:w-full sm:h-full */
+}
+
+.content {
+  @apply flex items-end p-6;
+}
+
+.label {
+  @apply text-2xl font-normal leading-9 text-white mb-3;
+}
+
+.placeholder {
+  @apply text-sm text-white;
+}

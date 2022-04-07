@@ -1,0 +1,35 @@
+.wrapper {
+  @apply py-12 px-4 md:px-6 lg:py-16 lg:px-8;
+}
+
+.innerWrapper {
+  @apply mx-auto max-w-7xl;
+}
+
+.content {
+  @apply md:grid md:grid-cols-2 md:gap-8;
+}
+
+.social {
+  @apply space-y-8 md:col-span-1 md:row-start-2 md:col-start-1 md:col-end-3;
+}
+
+.logo {
+  @apply h-8 md:mx-auto;
+}
+
+.text {
+  @apply text-base text-secondary md:w-3/4 md:text-center md:mx-auto;
+}
+
+.outLinks {
+  @apply flex space-x-6 md:justify-center;
+}
+
+.socialItem {
+  @apply text-gray-400 hover:text-gray-500;
+}
+
+.socialIcon {
+  @apply w-6 h-6;
+}

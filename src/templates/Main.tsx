@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import Advertising from '@/components/advertising';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { useAppContext } from '@/context/AppContext';
@@ -13,13 +14,12 @@ const Main = (props: IMainProps) => {
   const { theme, setSelectedTheme }: any = useAppContext();
 
   return (
-    <div className="px-1 w-full antialiased">
+    <div className="w-full antialiased">
       {props.meta}
       <main>
+        <Advertising message="Get free delivery on orders over $100 " />
         <Header theme={theme} setSelectedTheme={setSelectedTheme} />
-        <div className="py-5 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          {props.children}
-        </div>
+        {props.children}
         <Footer />
       </main>
     </div>

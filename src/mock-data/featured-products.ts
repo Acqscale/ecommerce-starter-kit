@@ -1,0 +1,138 @@
+export const categories = [
+  {
+    id: 1,
+    label: 'Suits',
+    products: [
+      {
+        id: 'product-1',
+        name: 'Product 1',
+        price: 420,
+        imgSrc: '/assets/images/product-1.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-2',
+        name: 'Product 2',
+        price: 333,
+        imgSrc: '/assets/images/product-2.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-3',
+        name: 'Product 3',
+        price: 69,
+        imgSrc: '/assets/images/product-3.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-4',
+        name: 'Product 4',
+        price: 124,
+        imgSrc: '/assets/images/product-4.png',
+        imgAlt: 'flan fstan',
+      },
+    ],
+  },
+  {
+    id: 2,
+    label: 'Shoes',
+    products: [
+      {
+        id: 'product-1',
+        name: 'Product 1',
+        price: 420,
+        imgSrc: '/assets/images/product-1.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-2',
+        name: 'Product 2',
+        price: 333,
+        imgSrc: '/assets/images/product-2.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-3',
+        name: 'Product 3',
+        price: 69,
+        imgSrc: '/assets/images/product-3.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-4',
+        name: 'Product 4',
+        price: 124,
+        imgSrc: '/assets/images/product-4.png',
+        imgAlt: 'flan fstan',
+      },
+    ],
+  },
+  {
+    id: 3,
+    label: 'Watches',
+    products: [
+      {
+        id: 'product-1',
+        name: 'Product 1',
+        price: 420,
+        imgSrc: '/assets/images/product-1.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-2',
+        name: 'Product 2',
+        price: 333,
+        imgSrc: '/assets/images/product-2.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-3',
+        name: 'Product 3',
+        price: 69,
+        imgSrc: '/assets/images/product-3.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-4',
+        name: 'Product 4',
+        price: 124,
+        imgSrc: '/assets/images/product-4.png',
+        imgAlt: 'flan fstan',
+      },
+    ],
+  },
+  {
+    id: 4,
+    label: 'Accessories',
+    products: [
+      {
+        id: 'product-1',
+        name: 'Product 1',
+        price: 420,
+        imgSrc: '/assets/images/product-1.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-2',
+        name: 'Product 2',
+        price: 333,
+        imgSrc: '/assets/images/product-2.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-3',
+        name: 'Product 3',
+        price: 69,
+        imgSrc: '/assets/images/product-3.png',
+        imgAlt: 'flan fstan',
+      },
+      {
+        id: 'product-4',
+        name: 'Product 4',
+        price: 124,
+        imgSrc: '/assets/images/product-4.png',
+        imgAlt: 'flan fstan',
+      },
+    ],
+  },
+];

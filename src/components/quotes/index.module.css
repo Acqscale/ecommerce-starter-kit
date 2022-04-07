@@ -1,0 +1,35 @@
+.wrapper {
+  @apply p-4 md:p-6 lg:p-0 lg:max-w-7xl lg:mx-auto;
+}
+
+.innerWrapper {
+  @apply w-full grid grid-cols-1 rounded-lg overflow-hidden md:grid-cols-2;
+}
+
+.quote {
+  @apply px-8 pb-10 pt-16 bg-primary first:border-b border-white border-opacity-20 text-white md:first:border-r md:py-20 lg:p-20;
+}
+
+.quoteIcon {
+  @apply mb-8;
+}
+
+.quoteText {
+  @apply text-base font-normal leading-6 mb-4;
+}
+
+.author {
+  @apply flex items-center gap-3;
+}
+
+.picture {
+  @apply h-14 w-14 rounded-full border-2 border-white;
+}
+
+.name {
+  @apply text-base font-medium;
+}
+
+.position {
+  @apply opacity-60;
+}

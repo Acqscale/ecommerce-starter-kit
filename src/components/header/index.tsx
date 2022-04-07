@@ -1,7 +1,11 @@
 import { Fragment, FunctionComponent, useState } from 'react';
 
 import { Popover, Transition } from '@headlessui/react';
-import { MenuIcon, SearchIcon, ShoppingBagIcon } from '@heroicons/react/solid';
+import {
+  MenuIcon,
+  SearchIcon,
+  ShoppingBagIcon,
+} from '@heroicons/react/outline';
 import Link from 'next/link';
 
 import { navigation } from '@/mock-data/navidagion';
@@ -28,11 +32,11 @@ const Header: FunctionComponent<HeaderProps> = ({
           aria-label="Top"
           className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8"
         >
-          <div className="border-b border-border-color">
+          <div>
             <div className="flex items-center h-16">
               <button
                 type="button"
-                className="p-2 rounded-md lg:hidden text-on-background bg-background"
+                className="p-2 text-slate-500 rounded-md lg:hidden"
                 onClick={() => setMobileMenuOpen(true)}
               >
                 <span className="sr-only">Open menu</span>
@@ -40,7 +44,7 @@ const Header: FunctionComponent<HeaderProps> = ({
               </button>
 
               {/* Logo */}
-              <div className="flex ml-4 lg:ml-0">
+              <div className="flex ml-2 lg:ml-0">
                 <Link href="/">
                   <a>
                     <span className="sr-only">Workflow</span>
@@ -202,26 +206,21 @@ const Header: FunctionComponent<HeaderProps> = ({
                 </div>
 
                 {/* Search */}
-                <div className="flex lg:ml-6">
-                  <a
-                    href="#"
-                    className="p-2 text-on-background hover:text-opacity-80"
-                  >
+                <div className="flex lg:ml-6 text-secondary">
+                  <a href="#" className="p-2">
                     <span className="sr-only">Search</span>
-                    <SearchIcon className="w-6 h-6" aria-hidden="true" />
+                    <SearchIcon className="w-5 h-5" aria-hidden="true" />
                   </a>
                 </div>
 
                 {/* Cart */}
-                <div className="flow-root ml-4 lg:ml-6">
+                <div className="flow-root ml-4 lg:ml-6 text-secondary">
                   <a href="#" className="group flex items-center p-2 -m-2">
                     <ShoppingBagIcon
-                      className="shrink-0 w-6 h-6 text-on-background group-hover:text-opacity-80"
+                      className="shrink-0 w-5 h-5"
                       aria-hidden="true"
                     />
-                    <span className="ml-2 text-sm font-medium text-on-background group-hover:text-opacity-80">
-                      0
-                    </span>
+                    <span className="ml-2 font-semibold">0</span>
                     <span className="sr-only">items in cart, view bag</span>
                   </a>
                 </div>

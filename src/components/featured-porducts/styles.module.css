@@ -1,0 +1,27 @@
+.wrapper {
+  @apply px-4 py-10 bg-secondary bg-opacity-10 w-full md:px-6 md:py-16;
+}
+
+.heading {
+  @apply text-center text-3xl font-normal leading-[45px] text-secondary mb-4 md:mb-6;
+}
+
+.categories {
+  @apply w-full flex justify-between mb-6 md:justify-center md:gap-8;
+}
+
+.category {
+  @apply w-fit md:justify-self-center;
+}
+
+.buttonText {
+  @apply text-sm font-medium text-secondary;
+}
+
+.buttonTextSelected {
+  @apply text-sm font-medium text-black;
+}
+
+.products {
+  @apply grid grid-cols-1 gap-4 w-full md:grid-cols-2 md:gap-8 lg:max-w-7xl lg:grid-cols-4 lg:mx-auto;
+}

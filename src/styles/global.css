@@ -6,9 +6,9 @@
 
 @layer base {
   :root {
-    --color-primary: 98, 0, 238;
+    --color-primary: 0, 70, 51;
     --color-on-primary: 255, 255, 255;
-    --color-secondary: 1, 135, 134;
+    --color-secondary: 71, 89, 88;
     --color-on-secondary: 255, 255, 255;
 
     --color-background: 255, 255, 255;
