@@ -9,9 +9,7 @@ import {
 import Link from 'next/link';
 
 import { navigation } from '@/mock-data/navidagion';
-import classNames from '@/utils/classnames';
 
-import ThemeSwitcher from '../ui/theme-switcher';
 import MobileMenu from './mobile-menu';
 
 type HeaderProps = {
@@ -19,10 +17,7 @@ type HeaderProps = {
   theme: string;
 };
 
-const Header: FunctionComponent<HeaderProps> = ({
-  theme,
-  setSelectedTheme,
-}) => {
+const Header: FunctionComponent<HeaderProps> = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   return (
     <>
@@ -30,10 +25,10 @@ const Header: FunctionComponent<HeaderProps> = ({
       <header className="relative z-30 bg-background">
         <nav
           aria-label="Top"
-          className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8"
+          className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-0"
         >
           <div>
-            <div className="flex items-center h-16">
+            <div className="flex items-center h-16 lg:justify-between">
               <button
                 type="button"
                 className="p-2 text-slate-500 rounded-md lg:hidden"
@@ -47,10 +42,14 @@ const Header: FunctionComponent<HeaderProps> = ({
               <div className="flex ml-2 lg:ml-0">
                 <Link href="/">
                   <a>
-                    <span className="sr-only">Workflow</span>
                     <img
-                      className="w-auto h-8"
-                      src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                      className="block w-auto h-8 md:hidden"
+                      src="/assets/images/logo-sm.svg"
+                      alt=""
+                    />
+                    <img
+                      className="hidden w-auto h-8 md:block"
+                      src="/assets/images/logo.svg"
                       alt=""
                     />
                   </a>
@@ -62,17 +61,10 @@ const Header: FunctionComponent<HeaderProps> = ({
                 <div className="flex space-x-8 h-full">
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
-                      {({ open }) => (
+                      {() => (
                         <>
                           <div className="flex relative">
-                            <Popover.Button
-                              className={classNames(
-                                open
-                                  ? 'border-primary text-primary'
-                                  : 'border-transparent text-on-background hover:text-opacity-80',
-                                'relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px'
-                              )}
-                            >
+                            <Popover.Button className="flex relative z-10 items-center text-base font-medium text-secondary">
                               {category.name}
                             </Popover.Button>
                           </div>
@@ -87,12 +79,10 @@ const Header: FunctionComponent<HeaderProps> = ({
                             leaveTo="opacity-0"
                           >
                             <Popover.Panel className="absolute inset-x-0 top-full z-10 text-sm text-on-background">
-                              {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                               <div
                                 className="absolute inset-0 top-1/2 shadow bg-background"
                                 aria-hidden="true"
                               />
-
                               <div className="relative bg-background">
                                 <div className="px-8 mx-auto max-w-7xl">
                                   <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
@@ -100,7 +90,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                                       {category.featured.map((item) => (
                                         <div
                                           key={item.name}
-                                          className="group relative text-base sm:text-sm"
+                                          className="relative"
                                         >
                                           <div className="overflow-hidden rounded-lg group-hover:opacity-75 aspect-w-1 aspect-h-1 bg-background">
                                             <img
@@ -111,7 +101,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                                           </div>
                                           <a
                                             href={item.href}
-                                            className="block mt-6 font-medium text-on-background"
+                                            className="block mt-6 text-sm font-bold text-black"
                                           >
                                             <span
                                               className="absolute inset-0 z-10"
@@ -121,7 +111,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                                           </a>
                                           <p
                                             aria-hidden="true"
-                                            className="mt-1"
+                                            className="mt-1 text-base font-normal text-secondary"
                                           >
                                             Shop now
                                           </p>
@@ -133,7 +123,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                                         <div key={section.name}>
                                           <p
                                             id={`${section.name}-heading`}
-                                            className="font-medium text-secondary"
+                                            className="font-semibold text-black"
                                           >
                                             {section.name}
                                           </p>
@@ -149,7 +139,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                                               >
                                                 <a
                                                   href={item.href}
-                                                  className="hover:text-opacity-80"
+                                                  className="text-base font-normal text-secondary"
                                                 >
                                                   {item.name}
                                                 </a>
@@ -173,7 +163,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center text-sm font-medium text-on-background hover:text-opacity-80"
+                      className="flex items-center text-base font-medium text-secondary"
                     >
                       {page.name}
                     </a>
@@ -181,30 +171,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                 </div>
               </Popover.Group>
 
-              <div className="flex items-center ml-auto">
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:space-x-6">
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-on-background hover:text-opacity-80"
-                  >
-                    Sign in
-                  </a>
-                  <span className="w-px h-6 bg-background" aria-hidden="true" />
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-on-background hover:text-opacity-80"
-                  >
-                    Create account
-                  </a>
-                </div>
-
-                <div className="hidden lg:flex lg:ml-8">
-                  <ThemeSwitcher
-                    isDark={theme === 'dark'}
-                    switchTheme={setSelectedTheme}
-                  />
-                </div>
-
+              <div className="flex items-center ml-auto lg:ml-0">
                 {/* Search */}
                 <div className="flex lg:ml-6 text-secondary">
                   <a href="#" className="p-2">

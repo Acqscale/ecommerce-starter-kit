@@ -44,7 +44,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ open, setOpen }) => {
             <div className="flex px-4 pt-5 pb-2">
               <button
                 type="button"
-                className="inline-flex justify-center items-center p-2 -m-2 rounded-md text-on-background"
+                className="inline-flex justify-center items-center p-2 -m-2 text-[#6B7280] rounded-md"
                 onClick={() => setOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -63,7 +63,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ open, setOpen }) => {
                         classNames(
                           selected
                             ? 'text-primary border-primary'
-                            : 'text-on-background border-transparent',
+                            : 'text-secondary border-transparent',
                           'flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium'
                         )
                       }
@@ -81,8 +81,8 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ open, setOpen }) => {
                   >
                     <div className="grid grid-cols-2 gap-x-4">
                       {category.featured.map((item) => (
-                        <div key={item.name} className="group relative text-sm">
-                          <div className="overflow-hidden rounded-lg group-hover:opacity-75 aspect-w-1 aspect-h-1 bg-background">
+                        <div key={item.name} className="relative text-sm">
+                          <div className="overflow-hidden rounded-lg aspect-w-1 aspect-h-1 bg-background">
                             <img
                               src={item.imageSrc}
                               alt={item.imageAlt}
@@ -91,7 +91,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ open, setOpen }) => {
                           </div>
                           <a
                             href={item.href}
-                            className="block mt-6 font-medium text-on-background"
+                            className="block mt-6 text-sm font-bold text-black"
                           >
                             <span
                               className="absolute inset-0 z-10"
@@ -101,7 +101,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ open, setOpen }) => {
                           </a>
                           <p
                             aria-hidden="true"
-                            className="mt-1 text-on-background text-opacity-60"
+                            className="mt-1 text-base font-normal text-secondary"
                           >
                             Shop now
                           </p>
@@ -112,7 +112,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ open, setOpen }) => {
                       <div key={section.name}>
                         <p
                           id={`${category.id}-${section.id}-heading-mobile`}
-                          className="font-medium text-on-background"
+                          className="text-base font-semibold text-black"
                         >
                           {section.name}
                         </p>
@@ -125,7 +125,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ open, setOpen }) => {
                             <li key={item.name} className="flow-root">
                               <a
                                 href={item.href}
-                                className="block p-2 -m-2 text-on-background text-opacity-60"
+                                className="block p-2 -m-2 text-base font-normal text-secondary"
                               >
                                 {item.name}
                               </a>
@@ -150,39 +150,6 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ open, setOpen }) => {
                   </a>
                 </div>
               ))}
-            </div>
-
-            <div className="py-6 px-4 space-y-6 border-t border-border-color">
-              <div className="flow-root">
-                <a
-                  href="#"
-                  className="block p-2 -m-2 font-medium text-on-background"
-                >
-                  Sign in
-                </a>
-              </div>
-              <div className="flow-root">
-                <a
-                  href="#"
-                  className="block p-2 -m-2 font-medium text-on-background"
-                >
-                  Create account
-                </a>
-              </div>
-            </div>
-
-            <div className="py-6 px-4 border-t border-border-color">
-              <a href="#" className="flex items-center p-2 -m-2">
-                <img
-                  src="https://tailwindui.com/img/flags/flag-canada.svg"
-                  alt=""
-                  className="block shrink-0 w-5 h-auto"
-                />
-                <span className="block ml-3 text-base font-medium text-on-background">
-                  CAD
-                </span>
-                <span className="sr-only">, change currency</span>
-              </a>
             </div>
           </div>
         </Transition.Child>
