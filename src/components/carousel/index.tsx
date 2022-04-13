@@ -68,7 +68,14 @@ const Carousel: FunctionComponent<CarouselProps> = ({ data }) => {
                   {item.placeholder}
                 </p>
                 <div>
-                  <Button onClick={() => {}}>Start Shopping</Button>
+                  <Button
+                    onClick={() => {}}
+                    variant="contained"
+                    size="medium"
+                    color="primary"
+                  >
+                    Start Shopping
+                  </Button>
                 </div>
               </div>
             )}

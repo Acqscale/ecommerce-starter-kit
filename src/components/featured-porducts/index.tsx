@@ -41,7 +41,8 @@ const FeaturedProducts: FunctionComponent<FeaturedProductsProps> = ({
           <div key={id} className={styles.category}>
             <Button
               onClick={() => setCurrentCategoryId(id)}
-              variant={currentCategoryId === id ? 'selected' : 'transparent'}
+              variant={currentCategoryId === id ? 'contained' : 'text'}
+              color={currentCategoryId === id ? 'info' : 'transparent'}
             >
               <span
                 className={

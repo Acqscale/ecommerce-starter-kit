@@ -1,0 +1,7 @@
+.root {
+  @apply mx-4 my-6 grid grid-cols-1 gap-6 md:max-w-[480px] md:mx-auto md:my-8 lg:max-w-[640px] lg:gap-8;
+
+  .buttons {
+    @apply grid grid-cols-1 gap-4;
+  }
+}

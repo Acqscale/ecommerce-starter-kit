@@ -1,0 +1,41 @@
+.button {
+  @apply text-base font-medium rounded-lg;
+
+  &.fullWidth {
+    @apply w-full;
+  }
+
+  &.small {
+    @apply py-2 px-3 text-sm;
+  }
+  
+  &.medium {
+    @apply py-3 px-6 leading-6;
+  }
+
+  &.large {}
+
+  &.contained {
+    &.primary {
+      @apply bg-primary text-white;
+    }
+
+    &.info {
+      @apply bg-secondary bg-opacity-10 text-[#0F1A1E];
+    }
+  }
+  
+  &.outline {
+    @apply border;
+  
+    &.primary {
+      @apply border-primary text-primary bg-transparent;
+    }
+  }
+
+  &.text {
+    &.primary {
+      @apply text-primary;
+    }
+  }
+}

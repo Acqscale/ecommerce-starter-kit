@@ -13,16 +13,7 @@ import { highlightsData, highlightsData2 } from '@/mock-data/highlights';
 import { quotesData } from '@/mock-data/quotes';
 import { Main } from '@/templates/Main';
 
-export default function CategoryPage() {
-  // const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  // const [viewType, setViewType] = useState<ViewType>(ViewType.listView);
-
-  // const handleViewTypeChange = () => {
-  //   setViewType(
-  //     viewType === ViewType.gridView ? ViewType.listView : ViewType.gridView
-  //   );
-  // };
-
+export default function HomePage() {
   return (
     <Main meta={<Meta title="Products" description="Products" />}>
       <Carousel data={carouselData} />
@@ -38,24 +29,6 @@ export default function CategoryPage() {
       />
       <Highlights data={highlightsData2} inline />
       <Quotes data={quotesData} />
-      {/* <MobileCategoryFilters
-        subCategories={subCategories}
-        filters={filters}
-        mobileFiltersOpen={mobileFiltersOpen}
-        setMobileFiltersOpen={setMobileFiltersOpen}
-      />
-      <CategoryFilters
-        sortOptions={sortOptions}
-        subCategories={subCategories}
-        filters={filters}
-        viewType={viewType}
-        handleViewTypeChange={handleViewTypeChange}
-        setMobileFiltersOpen={setMobileFiltersOpen}
-      >
-        <div className="lg:col-span-3">
-          <ProductsList products={products} viewType={viewType} />
-        </div>
-      </CategoryFilters> */}
     </Main>
   );
 }

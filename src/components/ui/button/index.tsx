@@ -1,23 +1,48 @@
 import { FunctionComponent, ReactChild } from 'react';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 type ButtonProps = {
-  onClick: () => void;
-  variant?: string;
+  onClick?: () => void;
+  variant?: 'contained' | 'outline' | 'text';
   children: ReactChild;
+  size?: 'small' | 'medium' | 'large';
+  disabled?: boolean;
+  color?:
+    | 'primary'
+    | 'secondary'
+    | 'transparent'
+    | 'success'
+    | 'error'
+    | 'warning'
+    | 'info';
+  fullWidth?: boolean;
+  classes?: string;
 };
 
 const Button: FunctionComponent<ButtonProps> = ({
   onClick,
-  variant = 'default',
+  variant = 'contained',
   children,
+  size = 'medium',
+  disabled = false,
+  color,
+  fullWidth = false,
+  classes = '',
 }) => {
   return (
     <button
       type="button"
-      className={`${styles.button} ${styles[variant]}`}
+      className={`
+        ${styles.button}
+        ${classes}
+        ${styles[variant]}
+        ${styles[size]}
+        ${color && styles[color]}
+        ${fullWidth ? styles.fullWidth : ''}
+      `}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>

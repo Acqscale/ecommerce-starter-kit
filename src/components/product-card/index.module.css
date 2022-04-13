@@ -13,7 +13,3 @@
 .productPrice {
   @apply text-sm font-bold mb-8;
 }
-
-.buttonWrapper {
-  @apply w-fit;
-}

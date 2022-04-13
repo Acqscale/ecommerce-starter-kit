@@ -34,7 +34,12 @@ const FeaturedCollections: FunctionComponent<FeaturedCollectionProps> = ({
             <div className={styles.content}>
               <div>
                 <h3 className={styles.label}>{name}</h3>
-                <Button onClick={() => {}} variant="outline-white">
+                <Button
+                  onClick={() => {}}
+                  variant="outline"
+                  classes="border-white text-white"
+                  size="small"
+                >
                   Start shopping
                 </Button>
               </div>

@@ -1,31 +1,27 @@
 import { ChangeEvent, FunctionComponent } from 'react';
 
-import classNames from '@/utils/classnames';
-
 type InputProps = {
   value: string;
   onChange: (val: ChangeEvent<HTMLInputElement>) => void;
   name: string;
-  type: string;
+  type?: string;
   placeholder?: string;
   label: string;
-  classes?: string;
 };
 
 const Input: FunctionComponent<InputProps> = ({
   value,
   onChange,
   name,
-  type,
+  type = 'text',
   placeholder,
   label,
-  classes,
 }) => {
   return (
-    <>
+    <div>
       <label
         htmlFor={name}
-        className="block mb-3 text-sm font-semibold text-on-background"
+        className="block mb-3 text-sm font-normal leading-5 text-[#0F1A1E]"
       >
         {label}
       </label>
@@ -34,14 +30,27 @@ const Input: FunctionComponent<InputProps> = ({
         name={name}
         type={type}
         placeholder={placeholder}
-        className={classNames(
-          'py-3 px-4 w-full text-sm rounded border focus:outline-none focus:ring-1 lg:text-sm border-border-color focus:ring-primary bg-background placeholder:text-on-background text-on-background',
-          classes || ''
-        )}
+        className="
+          py-3
+          px-5
+          w-full
+          text-base
+          placeholder:text-base
+          font-normal
+          placeholder:font-normal
+          placeholder:leading-6
+          text-[#0F1A1E]
+          placeholder:text-[#6B7280]
+          bg-[#F9FAFB]
+          rounded
+          border
+          border-[#E5E7EB]
+          active:border-[#1C64F2]
+        "
         value={value}
         onChange={onChange}
       />
-    </>
+    </div>
   );
 };
 

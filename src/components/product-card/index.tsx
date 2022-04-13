@@ -22,11 +22,14 @@ const ProductCard: FunctionComponent<ProductCardProps> = ({
       <div className={styles.productContent}>
         <h5 className={styles.productName}>{name}</h5>
         <p className={styles.productPrice}>{`$${price.toFixed(2)}`}</p>
-        <div className={styles.buttonWrapper}>
-          <Button onClick={() => {}} variant="outline">
-            Add to card
-          </Button>
-        </div>
+        <Button
+          onClick={() => {}}
+          variant="outline"
+          size="small"
+          color="primary"
+        >
+          Add to card
+        </Button>
       </div>
     </div>
   );
