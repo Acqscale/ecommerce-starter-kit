@@ -1,0 +1,11 @@
+.wrapper {
+  @apply mx-4 my-16 max-w-7xl md:mx-6 lg:mx-auto;
+
+  .heading {
+    @apply text-3xl font-normal text-secondary text-center mb-8;
+  }
+
+  .featured {
+    @apply grid grid-cols-2 gap-12 justify-items-center opacity-20 items-center md:grid-cols-3 lg:grid-cols-6;
+  }
+}

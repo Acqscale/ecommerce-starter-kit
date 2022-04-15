@@ -1,0 +1,11 @@
+.wrapper {
+  @apply mx-4 my-6 rounded-2xl overflow-hidden relative max-w-7xl md:mx-6 md:my-8 lg:mx-auto;
+
+  .cover {
+    @apply block object-cover w-full min-w-full h-[550px] lg:object-top;
+  }
+
+  .childrenContainer {
+    @apply absolute inset-0 p-4 md:p-8;
+  }
+}

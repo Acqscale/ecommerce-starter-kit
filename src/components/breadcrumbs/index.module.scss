@@ -24,4 +24,24 @@
       }
     }
   }
+
+  &.light {
+    @apply p-0 m-0;
+
+    .list > .item > .icon {
+      @apply text-white;
+
+      &.arrow {
+        @apply opacity-30;
+      }
+    }
+
+    .list > .item > .link {
+      @apply text-white;
+
+      &.active {
+        @apply text-opacity-[33%];
+      }
+    }
+  }
 }

@@ -1,0 +1,31 @@
+.wrapper {
+  @apply grid grid-cols-1 gap-6 mx-4 my-16 md:mx-6 lg:max-w-[864px] lg:mx-auto;
+
+  .heading {
+    @apply text-4xl font-normal text-secondary text-center;
+  }
+
+  .text {
+    @apply text-xl font-normal text-secondary leading-7;
+
+    &.small {
+      @apply text-base leading-6;
+    }
+  }
+
+  ul {
+    @apply list-disc mx-4 grid gap-6;
+  }
+
+  .subheading {
+    @apply text-3xl font-semibold text-secondary;
+  }
+
+  .quote {
+    @apply px-6 border-l-4 border-primary italic;
+  }
+
+  img {
+    @apply block object-cover w-full min-w-full rounded-2xl h-[620px] lg:object-top;
+  }
+}

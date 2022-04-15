@@ -1,0 +1,31 @@
+.wrapper {
+  @apply mx-4 my-16 md:mx-6 lg:max-w-7xl lg:mx-auto;
+
+  .heading {
+    @apply text-secondary text-3xl font-normal leading-10 text-center mb-6;
+  }
+
+  .promo {
+    @apply text-base font-normal text-center text-secondary leading-6 mb-9 lg:max-w-[65%] lg:mx-auto;
+  }
+
+  .benefits {
+    @apply grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4;
+
+    .benefit {
+      @apply flex;
+
+      .check {
+        @apply w-10 h-10 min-w-[2.5rem] text-primary mr-3;
+      }
+
+      .title {
+        @apply text-lg font-bold mb-3 text-[#0F1A1E];
+      }
+
+      .description {
+        @apply text-base font-normal text-secondary leading-6;
+      }
+    }
+  }
+}

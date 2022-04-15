@@ -5,11 +5,15 @@ import styles from './index.module.scss';
 
 type BreadCrumbsProps = {
   data: BreadCrumbItemProps[];
+  isLight?: boolean;
 };
 
-const BreadCrumbs: FunctionComponent<BreadCrumbsProps> = ({ data }) => {
+const BreadCrumbs: FunctionComponent<BreadCrumbsProps> = ({
+  data,
+  isLight,
+}) => {
   return (
-    <nav className={styles.wrapper}>
+    <nav className={`${styles.wrapper} ${isLight ? styles.light : ''}`}>
       <ol className={styles.list}>
         {data.map((breadCrumbItem) => {
           return (
