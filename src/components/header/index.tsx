@@ -5,6 +5,7 @@ import {
   MenuIcon,
   SearchIcon,
   ShoppingBagIcon,
+  XIcon,
 } from '@heroicons/react/outline';
 import Link from 'next/link';
 
@@ -19,6 +20,7 @@ type HeaderProps = {
 
 const Header: FunctionComponent<HeaderProps> = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [isSearchBarOper, setIsSearchBarOper] = useState<boolean>(false);
   return (
     <>
       <MobileMenu open={mobileMenuOpen} setOpen={setMobileMenuOpen} />
@@ -173,7 +175,10 @@ const Header: FunctionComponent<HeaderProps> = () => {
 
               <div className="flex items-center ml-auto lg:ml-0">
                 {/* Search */}
-                <div className="flex lg:ml-6 text-secondary">
+                <div
+                  className="flex lg:ml-6 text-secondary"
+                  onClick={() => setIsSearchBarOper(!isSearchBarOper)}
+                >
                   <a href="#" className="p-2">
                     <span className="sr-only">Search</span>
                     <SearchIcon className="w-5 h-5" aria-hidden="true" />
@@ -195,6 +200,26 @@ const Header: FunctionComponent<HeaderProps> = () => {
             </div>
           </div>
         </nav>
+        {isSearchBarOper && (
+          <div className="absolute inset-x-0 bg-[#F9FAFB] border border-[#D1D5DB]">
+            <div className="relative mx-5 md:mx-7 lg:mx-auto lg:max-w-7xl">
+              <div className="flex absolute inset-y-0 left-0 items-center">
+                <SearchIcon className="w-5 h-5 text-[#6B7280] stroke-[2px]" />
+              </div>
+              <input
+                className="py-5 px-6 w-full text-xl font-normal text-[#6B7280] bg-transparent border-0 md:px-13"
+                type="text"
+                placeholder="Search"
+              />
+              <div
+                className="flex absolute inset-y-0 right-0 items-center cursor-pointer"
+                onClick={() => setIsSearchBarOper(false)}
+              >
+                <XIcon className="w-5 h-5 text-[#6B7280] stroke-[2px]" />
+              </div>
+            </div>
+          </div>
+        )}
       </header>
     </>
   );
