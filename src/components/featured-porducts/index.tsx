@@ -16,10 +16,12 @@ type FeaturedProductsProps = {
       imgAlt: string;
     }[];
   }[];
+  onSelectProduct: (productId: number | string) => void;
 };
 
 const FeaturedProducts: FunctionComponent<FeaturedProductsProps> = ({
   data,
+  onSelectProduct,
 }) => {
   const [currentCategoryId, setCurrentCategoryId] = useState<string | number>(
     data[0]?.id || ''
@@ -43,6 +45,7 @@ const FeaturedProducts: FunctionComponent<FeaturedProductsProps> = ({
               onClick={() => setCurrentCategoryId(id)}
               variant={currentCategoryId === id ? 'contained' : 'text'}
               color={currentCategoryId === id ? 'info' : 'transparent'}
+              size="small"
             >
               <span
                 className={
@@ -61,10 +64,12 @@ const FeaturedProducts: FunctionComponent<FeaturedProductsProps> = ({
         {products?.map(({ id, name, price, imgSrc, imgAlt }) => (
           <ProductCard
             key={id}
+            id={id}
             name={name}
             price={price}
             imgSrc={imgSrc}
             imgAlt={imgAlt}
+            onSelectProduct={onSelectProduct}
           />
         ))}
       </div>

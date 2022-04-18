@@ -13,7 +13,7 @@ export default function ProductReview({ review }: any) {
       </div>
       <ProductRating
         rating={review.rating}
-        starsFirst={true}
+        starsFirst
         className={'mt-4 lg:mt-0'}
       />
       <div className="flex flex-col gap-x-3 mt-10 text-lg lg:mt-0">
